@@ -1,0 +1,13 @@
+---
+description: go project rule
+globs: *.go
+alwaysApply: false
+---
+# Tests and Lint
+maintain your tests to ensure quality.
+If you make any changes to the files, run the tests and Lint, and fix any problems that are found.
+
+Lint 
+```
+go tool golangci-lint run
+```
