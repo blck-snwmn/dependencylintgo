@@ -1,0 +1,9 @@
+rules:
+  - path: ["example/forbidden.go"]
+    deny:
+      - "fmt"
+    allow:
+      - "os"
+  - path: ["example/*.go"]
+    allow:
+      - "os" 
