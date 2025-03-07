@@ -2,8 +2,16 @@ rules:
   - path: ["example/forbidden.go"]
     deny:
       - "fmt"
+      - "github.com/unauthorized/*"  # ワイルドカード例
+      - "github.com/forbidden/**"    # 再帰的ワイルドカード例
     allow:
       - "os"
+      - "github.com/allowed/*"       # ワイルドカード例
   - path: ["example/*.go"]
+    deny:
+      - "fmt"                        # すべてのファイルでfmtを禁止
+      - "internal/**"                # 内部パッケージを外部に公開しない
     allow:
-      - "os" 
+      - "os"
+      - "golang.org/x/*"             # ワイルドカード例
+      - "github.com/approved/**"     # 再帰的ワイルドカード例
